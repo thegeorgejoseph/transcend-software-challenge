@@ -1,0 +1,47 @@
+{
+  "items": [
+    {
+      "address": "christi@circleci.com",
+      "name": "",
+      "subscribed": true,
+      "vars": {}
+    },
+    {
+      "address": "declan.k@transcend.io",
+      "name": "",
+      "subscribed": true,
+      "vars": { "age": 26 }
+    },
+    {
+      "address": "mike@transcend.io",
+      "name": "",
+      "subscribed": true,
+      "vars": {}
+    },
+    {
+      "address": "test+access@transcend.io",
+      "name": "",
+      "subscribed": true,
+      "vars": {}
+    },
+    {
+      "address": "test+contact_opt_out@transcend.io",
+      "name": "",
+      "subscribed": true,
+      "vars": {}
+    },
+    {
+      "address": "test+enriched@transcend.io",
+      "name": "",
+      "subscribed": true,
+      "vars": {}
+    },
+    {
+      "address": "test+ifyouseethisitsabug@transcend.io",
+      "name": "",
+      "subscribed": true,
+      "vars": {}
+    }
+  ],
+  "total_count": 7
+}
