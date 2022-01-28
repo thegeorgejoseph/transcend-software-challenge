@@ -1,14 +1,14 @@
 {
   "items": [
     {
-      "address": "christi@circleci.com",
-      "name": "",
+      "address": "bar@example.com",
+      "name": "Bob Bar",
       "subscribed": true,
-      "vars": {}
+      "vars": { "age": 26 }
     },
     {
-      "address": "declan.k@transcend.io",
-      "name": "",
+      "address": "hi@gmail.com",
+      "name": "Bob Bar",
       "subscribed": true,
       "vars": { "age": 26 }
     },

@@ -4,10 +4,12 @@ import mailgunDatapoints as dp
 
 # Modify this list to add the identifiers you want to use.
 sample_identifiers_list = [
+        'mike@transcend.io',
         'spongebob@transcend.io',
         'squidward@transcend.io',
         'patrick_star@transcend.io',
-        'sandy_cheeks@transcend.io'
+        'sandy_cheeks@transcend.io',
+        'hi@gmail.com'
         ]
 
 # The various action types.
