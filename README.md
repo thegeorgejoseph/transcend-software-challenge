@@ -6,4 +6,4 @@
 
 # cache.json stores the local copy of the data that is often accessed - can be replaced by a database
 
-# Uncomment the call to the function `logger()` to get detailed in-console logging.
+# Uncomment the call to the function `logger()` in runIntegrations.py to get detailed in-console logging.
