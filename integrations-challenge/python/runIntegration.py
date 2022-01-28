@@ -66,7 +66,7 @@ def main():
     # with the first identifier.
     # Once you're confident your code works, you can modify
     # this to refer to the entire list of identifiers!
-    data = [sample_identifiers_list[0]]
+    data = sample_identifiers_list
 
     # Run the functions for all the identifiers we want to test
     for identifier in data:
