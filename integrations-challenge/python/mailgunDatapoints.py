@@ -10,6 +10,7 @@ import http.client
 import datetime 
 load_dotenv()
 
+#I have used dotenv to load the URL and the API KEY from .env file
 # the api key
 MAILGUN_API_KEY = os.environ.get("API_KEY")
 #the base url
