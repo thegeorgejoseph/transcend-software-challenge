@@ -63,8 +63,10 @@ def run_integration(identifier, action_type):
 
 
 def main():
+    #uncomment the following function call to get detailed logging in the console
     # logger()
-    with open("errors.log","w") as log:
+    
+    with open("errors.log","w") as log: # clearing log file on every run 
         pass
     action = verify_action_args(sys.argv)
     # For now, we only want to run our application code
