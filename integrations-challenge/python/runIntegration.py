@@ -1,7 +1,8 @@
 import sys
 import json
 import mailgunDatapoints as dp
-
+import time
+from validate import logger
 # Modify this list to add the identifiers you want to use.
 sample_identifiers_list = [
         'mike@transcend.io',
@@ -60,8 +61,10 @@ def run_integration(identifier, action_type):
 
 
 def main():
+    # logger()
+    with open("errors.log","w") as log:
+        pass
     action = verify_action_args(sys.argv)
-
     # For now, we only want to run our application code
     # with the first identifier.
     # Once you're confident your code works, you can modify
@@ -70,11 +73,14 @@ def main():
 
     # Run the functions for all the identifiers we want to test
     for identifier in data:
+        start = time.time()
         if action == ActionType.Seed:
             dp.seed(identifier)
 
         elif action == ActionType.Access or action == ActionType.Erasure:
             run_integration(identifier, action)
+        end = time.time()
+        print(f"Time Taken  {end - start}")
     return
 
 if __name__ == "__main__":
