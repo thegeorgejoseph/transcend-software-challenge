@@ -32,6 +32,8 @@ def getListOfDomains(identifier):
     
     return res.json()
 
+#getting all available mailing lists in the domain
+#separate function in case we want to modify the mailing list separately
 def getMailingLists(identifier,currentTime = None):
         mailing_lists =[]
         try:  
@@ -59,7 +61,8 @@ def getMailingLists(identifier,currentTime = None):
                     cache[list_item['address']] = []
         cache['last_updated_time'] = time.time() if currentTime is None else currentTime
         return 
-    
+
+#populating every mailing list with the addresses of the members  
 def getMailingMembersForLists(identifier,currentTime = None):    
     for key,value in cache.items():
         if key == "last_updated_time":
@@ -93,6 +96,7 @@ def getMailingMembersForLists(identifier,currentTime = None):
     cache['last_updated_time'] = time.time() if currentTime is None else currentTime
     return
 
+#function to return the matching lists as result
 def getMatchingMailingList(identifier):
     result = []
     for key,values in cache.items():
@@ -101,27 +105,12 @@ def getMatchingMailingList(identifier):
         with open("cache.json","w") as file:
             json.dump(cache,file)
         for value in values:
-            # print(f"attemping {value}")
             if value == identifier:
                 result.append(key)
                 break
     return result
 
 def accessHelper(identifier):
-    # if validateEmail(identifier):
-    #         response_data = getListOfDomains(identifier)
-    # else:
-    #     raise ValueError(f"Invalid Email Found {identifier}")
-
-    # domain_lists = []
-    
-    # if response_data['total_count'] >0:
-    #     for domain_item in response_data['items']:
-    #         domain_lists.append(domain_item['name'])
-            
-    # if len(domain_lists) == 0:
-    #     raise Exception("There are no domains related to this account") 
-    
     #for the first time this is run we need to cache all the mailing lists
     if len(cache) == 0:
         getMailingLists(identifier)
@@ -130,7 +119,7 @@ def accessHelper(identifier):
     if len(cache) == 0:
         raise Exception("There are no mailing lists associated with this account")
     
-    if abs(cache['last_updated_time'] - time.time()) >= 86400: #making the api call once every 24 hours to have an updated mailing list
+    if abs(cache['last_updated_time'] - time.time()) >= 86400: #making the api call once every 24 hours to have an updated mailing list, improves speed of execution
         getMailingLists(identifier,time.time())
         getMailingMembersForLists(identifier,time.time())   
     
@@ -138,7 +127,12 @@ def accessHelper(identifier):
     return getMatchingMailingList(identifier)
 # get all the mailing lists the user belongs to
 def access(identifier):
-        data = accessHelper(identifier)    
+        if validateEmail(identifier):
+            data = accessHelper(identifier)  
+        else:
+            with open("errors.log","a") as log:
+                log.write(f"Invalid Email Identifier {identifier}")
+            data = []  
         return {"data":data}
         
 

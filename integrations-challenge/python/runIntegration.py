@@ -11,7 +11,8 @@ sample_identifiers_list = [
         'patrick_star@transcend.io',
         'sandy_cheeks@transcend.io',
         'hi@gmail.com',
-        'bar@example.com'
+        'bar@example.com',
+        'invalidemailgmail.com'
         ]
 
 # The various action types.
@@ -81,7 +82,7 @@ def main():
         elif action == ActionType.Access or action == ActionType.Erasure:
             run_integration(identifier, action)
         end = time.time()
-        print(f"Time Taken  {end - start}")
+        print(f"Time Taken  {end - start}") #Printing time to show that caching greatly reduces speed of execution after the first API call
     return
 
 if __name__ == "__main__":
