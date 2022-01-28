@@ -22,14 +22,25 @@ def access(identifier):
             res = requests.get(BASE_URL+"domains",auth=('api',MAILGUN_API_KEY))
         except requests.exceptions.Timeout:
             #We could implement a Retry logic here but for now we will throw an error
-            raise Exception("Request Timeout")
+            raise Exception("Request Timed Out")
         except requests.exceptions.TooManyRedirects:
             raise Exception("Bad URL, Try Again")
         
-        response_map = res.json()
-        
+        response_data = res.json()
+        domain_list = []
+
         with open('personal.json', 'w') as json_file:
-            json.dump(response_map, json_file)
+            json.dump(response_data, json_file)
+            
+        if response_data['total_count'] >0:
+            for domain_item in response_data['items']:
+                domain_list.append(domain_item['name'])
+                
+        if len(domain_list) == 0:
+            raise Exception("There are no domains related to this account")
+        
+        
+                
     else:
         raise ValueError(f"Invalid Email Found {identifier}")
 
