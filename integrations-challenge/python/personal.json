@@ -1,47 +1,20 @@
 {
   "items": [
     {
-      "address": "bar@example.com",
-      "name": "Bob Bar",
-      "subscribed": true,
-      "vars": { "age": 26 }
-    },
-    {
-      "address": "hi@gmail.com",
-      "name": "Bob Bar",
-      "subscribed": true,
-      "vars": { "age": 26 }
-    },
-    {
-      "address": "mike@transcend.io",
-      "name": "",
-      "subscribed": true,
-      "vars": {}
-    },
-    {
-      "address": "test+access@transcend.io",
-      "name": "",
-      "subscribed": true,
-      "vars": {}
-    },
-    {
-      "address": "test+contact_opt_out@transcend.io",
-      "name": "",
-      "subscribed": true,
-      "vars": {}
-    },
-    {
-      "address": "test+enriched@transcend.io",
-      "name": "",
-      "subscribed": true,
-      "vars": {}
-    },
-    {
-      "address": "test+ifyouseethisitsabug@transcend.io",
-      "name": "",
-      "subscribed": true,
-      "vars": {}
+      "created_at": "Mon, 05 Aug 2019 21:35:54 GMT",
+      "id": "5d48a13a02b076b4c7947231",
+      "is_disabled": false,
+      "name": "sandbox7743ee8a12e6444883a136ec1e3b41f2.mailgun.org",
+      "require_tls": false,
+      "skip_verification": false,
+      "smtp_login": "postmaster@sandbox7743ee8a12e6444883a136ec1e3b41f2.mailgun.org",
+      "spam_action": "disabled",
+      "state": "active",
+      "type": "sandbox",
+      "web_prefix": "email",
+      "web_scheme": "http",
+      "wildcard": false
     }
   ],
-  "total_count": 7
+  "total_count": 1
 }
