@@ -10,7 +10,8 @@ sample_identifiers_list = [
         'squidward@transcend.io',
         'patrick_star@transcend.io',
         'sandy_cheeks@transcend.io',
-        'hi@gmail.com'
+        'hi@gmail.com',
+        'bar@gmail.com'
         ]
 
 # The various action types.
